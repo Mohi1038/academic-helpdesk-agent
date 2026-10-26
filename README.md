@@ -70,3 +70,21 @@ One Google ADK `LlmAgent` has all eight tools and runs an Ollama model through L
 - **Grounding:** the prompt requires a tool call before any academic answer, and citations in square brackets. When sources conflict, the newest document wins: circulars and amendments override older regulations.
 - **Refusals:** out-of-scope questions get a fixed refusal message and are logged to `logs/unanswered.jsonl`. An `after_agent_callback` also logs any refusal the model forgot to log itself.
 - **Emails:** `draft_email` writes to `drafts/` and never sends. It only accepts addresses from the faculty directory, and appends the student's signature.
+
+## Multi-agent helpdesk
+
+```bash
+uv run python -m helpdesk.cli --mode multi                 # interactive
+uv run python scripts/smoke_agent.py --mode multi
+```
+
+```
+helpdesk_orchestrator --transfer_to_agent--> policy_agent    search_documents
+                                         --> schedule_agent  find_course, list_courses, get_slot_timetable, get_my_schedule
+                                         --> email_agent     get_instructor_contact, draft_email
+out of scope: the orchestrator refuses and logs the question (log_unanswered + callback safety net)
+```
+
+- The orchestrator has no domain tools. Its prompt describes each specialist and gives routing examples.
+- Specialists cannot transfer onwards (`disallow_transfer_to_parent` / `_peers`), so ADK returns control to the orchestrator at the next message. Every message is routed afresh, while the session history keeps follow-ups working ("write to *them* that ...").
+- Email drafts are shown exactly as the tool saved them. The model only confirms the draft, because when it retyped the email it once garbled the address.

@@ -37,6 +37,8 @@ async def main() -> None:
         for c in turn.tool_calls:
             print(f"  [{c.agent}] {c.name}({json.dumps(c.args, ensure_ascii=False)})")
         print(turn.answer or f"(no answer) {turn.error or ''}")
+        for draft in turn.drafts:
+            print(f"----- draft (not sent) -----\n{draft}")
         print(f"  -- {' -> '.join(turn.agents)} | {turn.latency_s}s")
 
 

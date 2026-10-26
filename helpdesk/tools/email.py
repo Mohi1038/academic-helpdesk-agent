@@ -3,6 +3,18 @@ from datetime import datetime
 
 from helpdesk import catalog, config
 
+CLOSING = re.compile(r"^\s*(yours (sincerely|truly|faithfully)|sincerely|(best |kind |warm )?regards|thanks|"
+                     r"thank you)\s*[,.!]?\s*$", re.IGNORECASE)
+
+
+def _strip_sign_off(body: str) -> str:
+    """Cut a closing the model added anyway ("Best regards,") and any name/placeholder lines after it."""
+    lines = body.strip().splitlines()
+    for i in range(len(lines) - 1, max(len(lines) - 5, 0) - 1, -1):
+        if CLOSING.match(lines[i]):
+            return "\n".join(lines[:i]).rstrip()
+    return body.strip()
+
 
 def draft_email(to_email: str, subject: str, body: str) -> dict:
     """Saves an email draft to an instructor for the student to review. The email is NOT sent.
@@ -24,9 +36,7 @@ def draft_email(to_email: str, subject: str, body: str) -> dict:
                 "message": f"'{to_email}' is not in the faculty directory. Call get_instructor_contact "
                            "and use the email address it returns."}
 
-    # Drop a closing line the model may have added anyway ("Sincerely,", "Best regards,", ...)
-    body = re.sub(r"\n\s*(yours (sincerely|truly)|sincerely|(best |kind |warm )?regards|thanks|thank you)"
-                  r"[ ,.]*\s*$", "", body.strip(), flags=re.IGNORECASE)
+    body = _strip_sign_off(body)
 
     profile = catalog.profile()
     signature = f"Regards,\n{profile['name']}\nRoll No.: {profile['roll_number']}\n{profile['programme']}"

@@ -17,6 +17,8 @@ def show(turn: Turn, trace: bool) -> None:
         for call in turn.tool_calls:
             print(f"  [{call.agent}] {call.name}({json.dumps(call.args, ensure_ascii=False)})")
     print(f"\n{turn.answer or '(no answer)'}")
+    for draft in turn.drafts:
+        print(f"\n----- draft (not sent) -----\n{draft}----------------------------")
     print(f"\n  ({' -> '.join(turn.agents)}, {turn.latency_s}s{', ERROR: ' + turn.error if turn.error else ''})\n")
 
 

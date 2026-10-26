@@ -70,6 +70,18 @@ def test_draft_email_saved_with_signature_and_not_sent():
     assert open(result["draft_file"], encoding="utf-8").read() == result["email"]
 
 
+@pytest.mark.parametrize("closing", [
+    "\n\nSincerely,",
+    "\n\nBest regards,\n[Your Name] [Your Roll Number]",
+    "\n\nYours sincerely,\nA Student\nB23CS000",
+])
+def test_draft_email_strips_model_sign_off(closing):
+    body = "Dear Prof. Jain,\n\nI will miss Thursday's class due to fever.\n\nThank you for your understanding."
+    email = draft_email("anoopj@iitj.ac.in", "Absence", body + closing)["email"]
+    assert email.count("Regards,") == 1 and "[Your Name]" not in email and "Sincerely" not in email
+    assert "Thank you for your understanding." in email  # a closing sentence inside the message stays
+
+
 def test_draft_email_rejects_addresses_not_in_directory():
     assert draft_email("someone@gmail.com", "Hi", "Dear Sir,")["status"] == "error"
 

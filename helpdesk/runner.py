@@ -39,6 +39,17 @@ class Turn:
     latency_s: float = 0.0
     error: str | None = None
 
+    @property
+    def drafts(self) -> list[str]:
+        """Email drafts exactly as saved by draft_email (shown verbatim; the model never retypes them)."""
+        return [c.response["email"] for c in self.tool_calls
+                if c.name == "draft_email" and (c.response or {}).get("status") == "draft_saved"]
+
+    @property
+    def route(self) -> str | None:
+        """The specialist the orchestrator transferred to, if any."""
+        return next((c.args.get("agent_name") for c in self.tool_calls if c.name == "transfer_to_agent"), None)
+
 
 class Helpdesk:
     def __init__(self, mode: str = "single", model: str | None = None):
