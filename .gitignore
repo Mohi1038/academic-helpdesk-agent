@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+
+# generated at runtime
+data/chroma/
+logs/
+drafts/
+eval/results/
+
+.DS_Store

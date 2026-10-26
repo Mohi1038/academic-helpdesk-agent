@@ -1,0 +1,15 @@
+[project]
+name = "academic-helpdesk-agent"
+version = "0.1.0"
+description = "Multi-agent academic helpdesk for IIT Jodhpur (Google ADK + Ollama + ChromaDB RAG)"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "requests>=2.32",
+    "beautifulsoup4>=4.12",
+    "pymupdf>=1.24",
+    "truststore>=0.10.5",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]

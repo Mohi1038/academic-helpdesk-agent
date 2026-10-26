@@ -1,0 +1,39 @@
+instructor_id,name,department,designation,email,research_areas
+F01,Romi Banerjee,Computer Science and Engineering,Assistant Professor,romibanerjee@iitj.ac.in,Embodied Cognitive Architectures; Artificial General Intelligence
+F02,Sidharth Ranjan,Computer Science and Engineering,Assistant Professor,sranjan@iitj.ac.in,"Natural Language Processing, Computational Psycholinguistics"
+F03,Anoop Jain,Electrical Engineering,Assistant Professor,anoopj@iitj.ac.in,"Cooperative Control, Multi-Agent Systems, Autonomous Systems, Robotics"
+F04,S Srivatsa Srinivas,Economics,Assistant Professor,srivatsa@iitj.ac.in,"Applied Game Theory and Operations Research, Service Operations"
+F05,Ansita Aggarwal,School of Management and Entrepreneurship,Assistant Professor,ansitaaggarwal@iitj.ac.in,"Strategy, Entrepreneurship, Design Thinking"
+F06,Aditi Sethia,Computer Science and Engineering (jointly with Mathematics),Assistant Professor,aditisethia@iitj.ac.in,"Computational Social Choice, Algorithm Design"
+F07,Navinya Dilip Chimurkar,Environment and Sustainability Engineering,Assistant Professor,navinya@iitj.ac.in,"Aerosols, Air Pollution, Emissions, Climate Change"
+F08,Vimal Raj Sharma,Computer Science and Engineering,Assistant Professor,vimalraj@iitj.ac.in,Complexity Theory; Graph Algorithms; Theoretical Computer Science
+F09,Tanmay Inamdar,Computer Science and Engineering,Assistant Professor,taninamdar@iitj.ac.in,Approximation Algorithms; Computational Geometry; Parameterized Complexity
+F10,Pallavi Jain,Computer Science and Engineering,Associate Professor,pallavi@iitj.ac.in,Parameterized Complexity and Algorithms; Kernelization
+F11,Palash Das,Computer Science and Engineering,Assistant Professor,palashdas@iitj.ac.in,Computer Architecture; Near-Memory Processing; Hardware Designing
+F12,Nitin Awathare,Computer Science and Engineering,Assistant Professor,nitina@iitj.ac.in,Distributed Systems; Blockchain; System Architecture
+F13,Mohit Kumar Jangid,Computer Science and Engineering,Assistant Professor,mjangid@iitj.ac.in,Automated Formal Verification; System Security and Privacy
+F14,Sumit Kalra,Computer Science and Engineering,Associate Professor,sumitk@iitj.ac.in,Software Architecture; Data Analytics; IoT
+F15,Gaurav Harit,Computer Science and Engineering,Professor,gharit@iitj.ac.in,Image and Video Analysis
+F16,Mayank Vatsa,Computer Science and Engineering,Professor,mvatsa@iitj.ac.in,Computer Vision; Machine Learning; Deep Learning; Biometrics
+F17,Richa Singh,Computer Science and Engineering,Professor,richa@iitj.ac.in,Machine Learning; Pattern Recognition; Biometrics; Trusted AI
+F18,Anand Mishra,Computer Science and Engineering,Assistant Professor,mishra@iitj.ac.in,Computer Vision; Deep Learning; Knowledge Graph
+F19,Susil Kumar Mohanty,Computer Science and Engineering,Assistant Professor,susilmohanty@iitj.ac.in,"Blockchain and Off-chain Technologies, Cyber Security"
+F20,Deeksha Varshney,Computer Science and Engineering,Assistant Professor,deeksha@iitj.ac.in,"Natural Language Processing, Dialogue Systems"
+F21,Sidharth Sharma,Computer Science and Engineering,Assistant Professor,sidharth@iitj.ac.in,Network Systems for AI at Scale; Resilient Networks
+F22,Dip Sankar Banerjee,Computer Science and Engineering,Associate Professor,dipsankarb@iitj.ac.in,High Performance Computing; Computer Architecture
+F23,Hardik Jain,Computer Science and Engineering,Assistant Professor,hardik.jain@iitj.ac.in,"3D Computer Vision, Edge AI, VR/AR Visualization"
+F24,Saurav Kumar,Electrical Engineering,Assistant Professor,sauravk@iitj.ac.in,"Wearable Robotics, Nonlinear Control, Legged Robots"
+F25,Niladri Sekhar Tripathy,Electrical Engineering,Assistant Professor,niladri@iitj.ac.in,"Dynamics and Control, Mechatronics, Cyber Physical Systems"
+F26,Binod Kumar,Electronics Engineering,Assistant Professor,binod@iitj.ac.in,"Digital VLSI Design, VLSI CAD, Hardware Security"
+F27,Dweepobotee Brahma,School of Artificial Intelligence and Data Science,Assistant Professor,dweepobotee@iitj.ac.in,
+F28,Kanak Yadav,School of Liberal Arts,Assistant Professor,kanakyadav@iitj.ac.in,"Literature and Cities, Dalit Literature, Indian English Writing"
+F29,Bhaskar Kumar Kakati,School of Liberal Arts,Assistant Professor,bhaskar@iitj.ac.in,"Sociology of Rural Development, Appropriate Technology"
+F30,Vidya Sarveswaran,School of Liberal Arts,Associate Professor,vs@iitj.ac.in,"Environmental Humanities, Environment and Culture"
+F31,V Hari Narayanan,School of Liberal Arts,Professor,hari@iitj.ac.in,"Philosophy: Cognitive Studies, Analytic Philosophy"
+F32,K J George,School of Liberal Arts,Associate Professor,kjg@iitj.ac.in,"Philosophy: Applied Ethics, Ethics of Technology"
+F33,Farhat Naz,School of Liberal Arts,Associate Professor,farhat@iitj.ac.in,"Natural Resource Management, Climate Change, Disasters"
+F34,Alok Ranjan,School of Liberal Arts,Associate Professor,alok@iitj.ac.in,"Public Health, Health Systems, Health Economics"
+F35,Prasenjeet A Tribhuvan,School of Liberal Arts,Assistant Professor,prasenjeet@iitj.ac.in,"STS Studies in Sociology, Political Anthropology"
+F36,Sherin Sabu,School of Liberal Arts,Assistant Professor,sherinsabu@iitj.ac.in,"Sensory Anthropology, Gender Studies"
+F37,Tonisha Guin,School of Liberal Arts,Assistant Professor,tonisha@iitj.ac.in,"Knowledge Systems in Global South, Decoloniality, Identity Studies"
+F38,Akanksha Choudhary,Economics,Assistant Professor,akanksha@iitj.ac.in,Development Economics
