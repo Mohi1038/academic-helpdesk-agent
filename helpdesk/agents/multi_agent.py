@@ -31,7 +31,15 @@ def _specialist(name: str, description: str, instruction: str, agent_tools: list
     )
 
 
-def build(model_name: str | None = None) -> LlmAgent:
+def build_without_thinking(model_name: str | None = None) -> LlmAgent:
+    """Ablation: the orchestrator with thinking off (the first evaluated version)."""
+    return build(model_name, orchestrator_thinking=False)
+
+
+def build(model_name: str | None = None, orchestrator_thinking: bool = True) -> LlmAgent:
+    """Thinking is enabled for the orchestrator only (where the model supports it, i.e. qwen3): with it
+    off, qwen3 returned an empty message instead of routing questions that sit between two specialists
+    ("whom do I address a leave application to?", "email my instructor about a make-up exam")."""
     policy = _specialist(
         "policy_agent",
         "Answers questions on academic rules and regulations, programmes, curricula, credit requirements, "
@@ -50,7 +58,7 @@ def build(model_name: str | None = None) -> LlmAgent:
 
     return LlmAgent(
         name="helpdesk_orchestrator",
-        model=make_model(model_name),
+        model=make_model(model_name, thinking=orchestrator_thinking),
         description="IIT Jodhpur academic helpdesk front desk; routes questions to specialists.",
         instruction=prompts.ORCHESTRATOR,
         tools=[tools.log_unanswered],

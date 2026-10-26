@@ -24,6 +24,16 @@ def test_count_400_level_humanities_electives():
         assert all(c["code"].startswith("HSL4") for c in result["courses"])
 
 
+@pytest.mark.parametrize("level", ["400", "400-level", 4])
+def test_list_courses_accepts_level_as_string(level):
+    # llama3.1 sends numeric arguments as strings; this used to raise TypeError
+    assert list_courses(department="Humanities", level=level, category="elective")["count"] == 7
+
+
+def test_list_courses_rejects_non_numeric_level():
+    assert list_courses(level="advanced")["status"] == "error"
+
+
 def test_list_courses_unknown_department_lists_valid_ones():
     result = list_courses(department="Astrology")
     assert result["status"] == "unknown_department"

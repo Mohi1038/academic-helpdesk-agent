@@ -74,6 +74,11 @@ def list_courses(department: str | None = None, level: int | None = None,
         pool = [c for c in pool if c["department"] in names]
         applied["department"] = names
     if level:
+        # Some models send the level as a string ("400", "400-level"); ADK passes it through unconverted.
+        digits = "".join(ch for ch in str(level) if ch.isdigit())
+        if not digits:
+            return {"status": "error", "message": f"Level must be a number such as 400, not '{level}'."}
+        level = int(digits)
         level = level * 100 if level < 10 else level
         pool = [c for c in pool if int(c["level"]) == level]
         applied["level"] = level

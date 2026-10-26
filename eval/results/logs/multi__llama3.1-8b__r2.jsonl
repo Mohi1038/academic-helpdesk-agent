@@ -1,0 +1,8 @@
+{"timestamp": "2026-10-26T18:56:12+00:00", "question": "I missed my Major exam because I was ill. How do I apply for a make-up exam?", "reason": "refusal not logged by the agent", "logged_by": "callback:email_agent"}
+{"timestamp": "2026-10-26T18:57:15+00:00", "question": "Who teaches Computational Game Theory and what is their email address?", "reason": "refusal not logged by the agent", "logged_by": "callback:email_agent"}
+{"timestamp": "2026-10-26T18:57:18+00:00", "question": "What are the available dining options on the campus?", "reason": "out of scope: dining", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:57:18+00:00", "question": "What is the best way to reach the campus from Jodhpur city center?", "reason": "out of scope: dining", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:57:21+00:00", "question": "How do I apply for a hostel room change?", "reason": "out of scope: hostel room change", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:57:22+00:00", "question": "What is the attendance requirement for the hostel mess?", "reason": "out of scope: dining", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:57:23+00:00", "question": "Who is the current Director of IIT Jodhpur?", "reason": "out of scope: not an academic matter", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:57:25+00:00", "question": "What was the average placement package for CSE students in 2025?", "reason": "out of scope: not an academic matter", "logged_by": "agent"}

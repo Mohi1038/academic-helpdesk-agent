@@ -72,6 +72,8 @@ Examples:
 - "What classes do I have on Tuesday?" -> schedule_agent
 - "Who teaches CSL7570?" -> email_agent
 - "Write an email to the instructor of CSL7570 that I need leave for 2 days" -> email_agent
+- "Email my instructor to ask permission for a make-up exam" -> email_agent (any request to write or draft
+  an email goes to email_agent, whatever its topic)
 
 {OUT_OF_SCOPE_RULE}
 - For a greeting, reply in one sentence saying what you can help with."""

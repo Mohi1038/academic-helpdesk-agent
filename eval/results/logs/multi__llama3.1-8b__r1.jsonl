@@ -1,0 +1,12 @@
+{"timestamp": "2026-10-26T18:54:49+00:00", "question": "I missed my Major exam because I was ill. How do I apply for a make-up exam?", "reason": "refusal not logged by the agent", "logged_by": "callback:email_agent"}
+{"timestamp": "2026-10-26T18:54:53+00:00", "question": "What happens if I am absent from all academic activities for four weeks in a semester?", "reason": "out of scope: academic rules and regulations not specified for this duration", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:55:00+00:00", "question": "To whom should a B.Tech. student address an application for leave of absence?", "reason": "refusal not logged by the agent", "logged_by": "callback:email_agent"}
+{"timestamp": "2026-10-26T18:55:46+00:00", "question": "Write an email to the instructor of Autonomous Systems asking for permission to take a make-up exam because I missed the Minor exam due to illness", "reason": "refusal not logged by the agent", "logged_by": "callback:email_agent"}
+{"timestamp": "2026-10-26T18:55:48+00:00", "question": "What are the available dining options on the campus?", "reason": "out of scope: dining", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:55:49+00:00", "question": "Who teaches Computational Game Theory and what is their email address?", "reason": "refusal not logged by the agent", "logged_by": "callback:email_agent"}
+{"timestamp": "2026-10-26T18:55:50+00:00", "question": "What is the best way to reach the campus from Jodhpur city center?", "reason": "out of scope: dining", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:55:52+00:00", "question": "How do I apply for a hostel room change?", "reason": "out of scope: dining", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:55:53+00:00", "question": "Draft an email to the Operations Research for Economics instructor saying I will miss Monday's class because I have fever", "reason": "refusal not logged by the agent", "logged_by": "callback:email_agent"}
+{"timestamp": "2026-10-26T18:55:54+00:00", "question": "What is the attendance requirement for the hostel mess?", "reason": "out of scope: dining", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:55:56+00:00", "question": "Who is the current Director of IIT Jodhpur?", "reason": "out of scope: general knowledge", "logged_by": "agent"}
+{"timestamp": "2026-10-26T18:55:57+00:00", "question": "What was the average placement package for CSE students in 2025?", "reason": "out of scope: placement", "logged_by": "agent"}

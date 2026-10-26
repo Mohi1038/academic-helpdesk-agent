@@ -16,6 +16,7 @@ dependencies = [
     "litellm>=1.106.4",
     "mcp>=2.3.0",
     "streamlit>=1.66.1",
+    "anthropic>=2.3.0",
 ]
 
 [dependency-groups]

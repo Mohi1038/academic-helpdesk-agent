@@ -5,9 +5,9 @@ __pycache__/
 .pytest_cache/
 
 # generated at runtime
-data/chroma/
-logs/
-drafts/
-eval/results/
+/data/chroma/
+/logs/
+/drafts/
+eval_run.log
 
 .DS_Store

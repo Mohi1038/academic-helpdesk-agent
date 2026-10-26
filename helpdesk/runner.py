@@ -19,7 +19,11 @@ from helpdesk import config
 
 APP_NAME = "iitj_helpdesk"
 USER_ID = "student"
-BUILDERS = {"single": "helpdesk.agents.single_agent", "multi": "helpdesk.agents.multi_agent"}
+BUILDERS = {  # mode -> (module, builder function)
+    "single": ("helpdesk.agents.single_agent", "build"),
+    "multi": ("helpdesk.agents.multi_agent", "build"),
+    "multi_nothink": ("helpdesk.agents.multi_agent", "build_without_thinking"),  # evaluation ablation
+}
 
 
 @dataclass
@@ -55,7 +59,8 @@ class Helpdesk:
     def __init__(self, mode: str = "single", model: str | None = None):
         self.mode = mode
         self.model = model or config.CHAT_MODEL
-        agent = importlib.import_module(BUILDERS[mode]).build(self.model)
+        module, builder = BUILDERS[mode]
+        agent = getattr(importlib.import_module(module), builder)(self.model)
         self._sessions = InMemorySessionService()
         self._runner = Runner(app_name=APP_NAME, agent=agent, session_service=self._sessions)
 

@@ -99,3 +99,21 @@ uv run streamlit run app/streamlit_app.py
 - **Email drafts:** an editable card with a download button. Nothing is ever sent.
 - **Unanswered questions:** the log for staff follow-up, with a *resolved* checkbox and a download button.
 - **Sidebar:** switch between the multi-agent and single-agent setups, pick any chat model available in Ollama, and start a new conversation.
+
+## Evaluation
+
+```bash
+uv run python eval/run_eval.py     # 30 questions x {single, multi} x 3 models x 3 runs -> eval/results/runs/
+uv run python eval/judge.py        # Claude judge (needs ANTHROPIC_API_KEY in .env) -> verdicts + run consistency
+uv run python eval/score.py        # metrics -> eval/results/summary.md, metrics.csv, per_answer.csv
+```
+
+- **Questions:** `eval/questions.jsonl` has 30 questions (12 policy, 8 schedule, 4 email, 6 out-of-scope), each with a reference answer, gold sources, and the expected specialist and tools.
+- **Judge:** `claude-sonnet-5-5` at effort `medium`, with structured output. It grades correctness, groundedness (against the tool outputs the agent actually saw), citation quality and refusal, and checks whether the runs of each question agree. Results are cached in `eval/results/judge_cache.jsonl`.
+- **Deterministic metrics:** refusal and logging of out-of-scope questions, routing, tool selection, citations that match a returned source, retrieval of the gold source, and latency.
+
+**Report:** [report/report.md](report/report.md). Headline results:
+
+- qwen3:8b scores about 80% in-scope accuracy in both single and multi-agent modes. 94–97% of its answers are grounded, and it refuses and logs 100% of out-of-scope questions.
+- llama3.1:8b scores 72% (single) and 60% (multi).
+- granite3.3:8b cannot emit structured tool calls through Ollama, and fabricates tool results.
