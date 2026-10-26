@@ -88,3 +88,14 @@ out of scope: the orchestrator refuses and logs the question (log_unanswered + c
 - The orchestrator has no domain tools. Its prompt describes each specialist and gives routing examples.
 - Specialists cannot transfer onwards (`disallow_transfer_to_parent` / `_peers`), so ADK returns control to the orchestrator at the next message. Every message is routed afresh, while the session history keeps follow-ups working ("write to *them* that ...").
 - Email drafts are shown exactly as the tool saved them. The model only confirms the draft, because when it retyped the email it once garbled the address.
+
+## Streamlit UI
+
+```bash
+uv run streamlit run app/streamlit_app.py
+```
+
+- **Chat:** each answer shows the route it took (e.g. `helpdesk_orchestrator → schedule_agent`), its latency, and a **Sources** panel built from the tool responses (document citations with links and snippets, or the structured-data source). There are example questions to click, and an optional tool-call trace.
+- **Email drafts:** an editable card with a download button. Nothing is ever sent.
+- **Unanswered questions:** the log for staff follow-up, with a *resolved* checkbox and a download button.
+- **Sidebar:** switch between the multi-agent and single-agent setups, pick any chat model available in Ollama, and start a new conversation.
