@@ -41,3 +41,9 @@ DOC_PREFIX = "search_document: " if _NOMIC else ""
 QUERY_PREFIX = "search_query: " if _NOMIC else ""
 
 CURRENT_SEM = os.getenv("CURRENT_SEM", "2026-27-I")
+
+# Runtime outputs
+DRAFTS_DIR = Path(os.getenv("DRAFTS_DIR", ROOT / "drafts"))
+UNANSWERED_LOG = Path(os.getenv("UNANSWERED_LOG", ROOT / "logs" / "unanswered.jsonl"))
+# Characters of each retrieved chunk passed to the model (keeps 5 hits well inside an 8k context)
+MAX_CHUNK_CHARS = int(os.getenv("MAX_CHUNK_CHARS", 2000))

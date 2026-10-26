@@ -22,7 +22,9 @@ if ! command -v ollama >/dev/null; then
   SUDO=$([ "$(id -u)" -eq 0 ] || echo sudo)
   # the installer ships a .tar.zst archive
   command -v zstd >/dev/null || { $SUDO apt-get update -qq && $SUDO apt-get install -y -qq zstd curl; }
-  curl -fsSL https://ollama.com/install.sh | sh
+  # Pin with OLLAMA_VERSION=x.y.z when the host NVIDIA driver is older than recent releases require
+  # (e.g. driver 530 + V100: use a release that still ships the cuda_v11 runner).
+  curl -fsSL https://ollama.com/install.sh | OLLAMA_VERSION="${OLLAMA_VERSION:-}" sh
 fi
 
 if ! curl -sf "http://127.0.0.1:11434/api/tags" >/dev/null; then
