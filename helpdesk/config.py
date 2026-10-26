@@ -12,6 +12,8 @@ load_dotenv(ROOT / ".env")
 OLLAMA_API_BASE = os.getenv("OLLAMA_API_BASE", "http://localhost:11434")
 EMBED_MODEL = os.getenv("EMBED_MODEL", "nomic-embed-text")
 CHAT_MODEL = os.getenv("CHAT_MODEL", "qwen3:8b")
+NUM_CTX = int(os.getenv("NUM_CTX", 8192))  # Ollama's default context window silently truncates prompts
+TEMPERATURE = float(os.getenv("TEMPERATURE")) if os.getenv("TEMPERATURE") else None  # None: model default
 
 # Data locations
 DATA_DIR = ROOT / "data"

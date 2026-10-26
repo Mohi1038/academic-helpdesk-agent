@@ -11,7 +11,7 @@ def search_documents(query: str) -> dict:
         query: A self-contained search query, e.g. "attendance requirement for major examination".
 
     Returns:
-        dict: `status` is "success" with numbered `results` (source_id, citation, text), or
+        dict: `status` is "success" with `results` (citation, url, text), or
         "no_relevant_documents" when nothing in the corpus matches the query.
     """
     hits = retriever.search(query)
@@ -23,15 +23,12 @@ def search_documents(query: str) -> dict:
         }
     return {
         "status": "success",
+        # No passage ids: given "S1".."S5", small models cite the id instead of the document.
         "results": [
-            {
-                "source_id": f"S{i}",
-                "citation": hit.citation,
-                "url": hit.source_url,
-                "text": hit.text[:config.MAX_CHUNK_CHARS],
-            }
-            for i, hit in enumerate(hits, start=1)
+            {"citation": hit.citation, "url": hit.source_url, "text": hit.text[:config.MAX_CHUNK_CHARS]}
+            for hit in hits
         ],
-        "instructions": "Answer only from these passages and cite each fact as [citation]. If the "
-                        "passages do not contain the answer, say you do not know and call log_unanswered.",
+        "instructions": "Answer only from these passages. Cite each fact with the passage's citation text in "
+                        "square brackets, e.g. [" + hits[0].citation + "]. If the passages do not contain "
+                        "the answer, call log_unanswered and say you do not know.",
     }

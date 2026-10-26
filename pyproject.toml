@@ -12,6 +12,9 @@ dependencies = [
     "chromadb>=1.5.9",
     "rank-bm25>=0.2.2",
     "python-dotenv>=1.2.4",
+    "google-adk>=2.13.0",
+    "litellm>=1.106.4",
+    "mcp>=2.3.0",
 ]
 
 [dependency-groups]

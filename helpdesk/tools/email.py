@@ -24,6 +24,10 @@ def draft_email(to_email: str, subject: str, body: str) -> dict:
                 "message": f"'{to_email}' is not in the faculty directory. Call get_instructor_contact "
                            "and use the email address it returns."}
 
+    # Drop a closing line the model may have added anyway ("Sincerely,", "Best regards,", ...)
+    body = re.sub(r"\n\s*(yours (sincerely|truly)|sincerely|(best |kind |warm )?regards|thanks|thank you)"
+                  r"[ ,.]*\s*$", "", body.strip(), flags=re.IGNORECASE)
+
     profile = catalog.profile()
     signature = f"Regards,\n{profile['name']}\nRoll No.: {profile['roll_number']}\n{profile['programme']}"
     email = (f"To: {recipient['name']} <{recipient['email']}>\nSubject: {subject.strip()}\n\n"

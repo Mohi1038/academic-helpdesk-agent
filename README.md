@@ -55,3 +55,18 @@ uv run python scripts/check_retrieval.py  # hit@5 / MRR on eval/retrieval_set.js
 - Chunks are about 350 words, follow section boundaries, overlap by one paragraph, and keep page ranges for citations. Repeated page headers and footers are dropped. Scanned PDFs use their OCR text.
 - Retrieval is hybrid: dense search (`nomic-embed-text` in ChromaDB) plus BM25, fused with reciprocal rank fusion. BM25 catches exact tokens such as course codes and clause numbers.
 - If the best dense similarity is below `MIN_SIMILARITY`, the query is treated as unanswerable from the corpus.
+
+## Single agent (baseline)
+
+```bash
+uv run python -m helpdesk.cli "What is the slot for the course Autonomous Systems?"   # one question
+uv run python -m helpdesk.cli --model llama3.1:8b                                    # interactive chat
+uv run python scripts/smoke_agent.py                                                 # the assignment's sample questions
+```
+
+One Google ADK `LlmAgent` has all eight tools and runs an Ollama model through LiteLLM. It must use the
+`ollama_chat/` provider; the plain `ollama/` provider loops on tool calls. qwen3's thinking mode is switched off.
+
+- **Grounding:** the prompt requires a tool call before any academic answer, and citations in square brackets. When sources conflict, the newest document wins: circulars and amendments override older regulations.
+- **Refusals:** out-of-scope questions get a fixed refusal message and are logged to `logs/unanswered.jsonl`. An `after_agent_callback` also logs any refusal the model forgot to log itself.
+- **Emails:** `draft_email` writes to `drafts/` and never sends. It only accepts addresses from the faculty directory, and appends the student's signature.
