@@ -4,13 +4,34 @@ Multi-agent academic helpdesk for IIT Jodhpur, built with Google ADK, Ollama-hos
 ChromaDB RAG pipeline. It answers questions on programmes, curricula, rules and regulations, and the timetable.
 It also drafts emails to course instructors, and refuses (and logs) questions it cannot answer.
 
-> Work in progress. Phase 1 (data corpus) is complete.
+> Work in progress. Phase 1 (data corpus) is complete; Phase 2 (RAG pipeline) is implemented.
 
 ## Setup
 
 ```bash
 uv sync --python 3.12
+cp .env.example .env
 ```
+
+### Model server
+
+The models run in Ollama. It can be installed locally (16 GB RAM is enough for one 8B model) or run on a remote
+GPU server.
+
+On the remote server, run this inside the GPU container:
+
+```bash
+bash server/setup_ollama.sh        # installs Ollama, serves on the bridge IP, pulls all models
+```
+
+Then, on the laptop, keep this tunnel open:
+
+```bash
+scripts/tunnel.sh user@gpu-host 172.17.0.4   # localhost:11434 -> container
+```
+
+The tunnel goes to the **host**, and the host forwards to the container's bridge IP, so no container port is
+published. Ollama has no authentication, so never expose port 11434 publicly.
 
 ## Data corpus
 
@@ -23,3 +44,14 @@ uv run pytest -q                      # integrity checks on the manifest and the
 - `data/raw/`: 24 PDFs and 5 web pages saved as Markdown. They cover academic regulations, attendance and examination circulars, the 2026-27 academic calendar, holidays, fees, scholarships, forms, and the B.Tech./M.Tech. curricula, including humanities courses.
 - `data/manifest.csv`: provenance for each document (title, category, source URL, fetch date, page count, hash).
 - `data/structured/`: course offerings, the official 2026-27 Semester I slot system, and the real faculty directory. Course codes are partly synthetic and course-to-instructor assignments are illustrative. See [data/structured/README.md](data/structured/README.md).
+
+## RAG pipeline
+
+```bash
+uv run python -m helpdesk.ingest          # chunk -> embed (Ollama) -> data/chroma/
+uv run python scripts/check_retrieval.py  # hit@5 / MRR on eval/retrieval_set.jsonl + refusal-threshold calibration
+```
+
+- Chunks are about 350 words, follow section boundaries, overlap by one paragraph, and keep page ranges for citations. Repeated page headers and footers are dropped. Scanned PDFs use their OCR text.
+- Retrieval is hybrid: dense search (`nomic-embed-text` in ChromaDB) plus BM25, fused with reciprocal rank fusion. BM25 catches exact tokens such as course codes and clause numbers.
+- If the best dense similarity is below `MIN_SIMILARITY`, the query is treated as unanswerable from the corpus.
