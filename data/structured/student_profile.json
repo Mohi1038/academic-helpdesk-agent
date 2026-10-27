@@ -1,0 +1,8 @@
+{
+  "name": "<Student Name>",
+  "roll_number": "<Roll Number>",
+  "programme": "B.Tech.",
+  "semester_number": 7,
+  "academic_semester": "2026-27-I",
+  "registered_courses": ["CSL4100", "IDL4010", "ECL4010", "SML3010", "CSL4180", "ESL4010"]
+}

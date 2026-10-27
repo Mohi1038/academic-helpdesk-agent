@@ -1,0 +1,7 @@
+{"timestamp": "2026-10-26T18:47:16+00:00", "question": "What are the available dining options on the campus?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}
+{"timestamp": "2026-10-26T18:47:17+00:00", "question": "Draft an email to the Operations Research for Economics instructor saying I will miss Monday's class because I have fever", "reason": "refusal not logged by the agent", "logged_by": "callback:email_agent"}
+{"timestamp": "2026-10-26T18:47:18+00:00", "question": "What is the best way to reach the campus from Jodhpur city center?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}
+{"timestamp": "2026-10-26T18:47:19+00:00", "question": "How do I apply for a hostel room change?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}
+{"timestamp": "2026-10-26T18:47:20+00:00", "question": "What is the attendance requirement for the hostel mess?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}
+{"timestamp": "2026-10-26T18:47:20+00:00", "question": "Who is the current Director of IIT Jodhpur?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}
+{"timestamp": "2026-10-26T18:47:20+00:00", "question": "What was the average placement package for CSE students in 2025?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}

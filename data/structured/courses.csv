@@ -1,0 +1,47 @@
+code,title,department,level,category,credits,ltp,semester,slot,meetings,lab_slot,room,instructor_id,offered_to,title_source
+CSL4100,Artificial Intelligence,Computer Science and Engineering,400,elective,3,3-0-0,2026-27-I,,Tue 10:00-10:50; Wed 09:00-09:50; Fri 09:00-09:50,,LHC 110,F01,Programme elective (B.Tech. CSE AI-ML stream); open elective (other B.Tech. programmes),btech_cse_curriculum
+IDL4010,Autonomous Systems,Interdisciplinary Research Platform - Robotics and Mobility Systems,400,elective,3,3-0-0,2026-27-I,,Tue 11:00-11:50; Thu 11:00-11:50; Fri 11:00-11:50,,LHC 106,F03,Programme elective (B.Tech. CSE AI-ML stream); open elective (other B.Tech. programmes),btech_cse_curriculum
+ECL4010,Operations Research for Economics,Economics,400,elective,3,3-0-0,2026-27-I,,Mon 11:00-11:50; Wed 11:00-11:50; Fri 10:00-10:50,,LHC 206,F04,Open elective (all B.Tech. programmes),student_timetable
+SML3010,Introduction to Business and Management,School of Management and Entrepreneurship,300,elective,3,3-0-0,2026-27-I,,Mon 12:00-12:50; Wed 12:00-12:50; Fri 12:00-12:50,,LHC 308,F05,Open elective (all B.Tech. programmes),student_timetable
+CSL4180,Computational Game Theory,Computer Science and Engineering,400,elective,3,3-0-0,2026-27-I,,Tue 16:00-16:50; Thu 16:00-16:50; Fri 16:00-16:50,,LHC 204,F06,Programme elective (CSE); open elective (other B.Tech. programmes),student_timetable
+ESL4010,Environmental Science,Environment and Sustainability Engineering,400,institute_core,2,2-0-0,2026-27-I,,Tue 12:00-12:50; Thu 12:00-12:50,,LHC 110,F07,All B.Tech. programmes Semester VII,btech_cse_structure
+CSL2010,Maths for Computing,Computer Science and Engineering,200,programme_core,4,3-1-0,2026-27-I,C,,,LHC 101,F08,B.Tech. CSE Semester III,btech_cse_structure
+CSL2020,Data Structures and Algorithms,Computer Science and Engineering,200,programme_core,4,3-0-2,2026-27-I,A,,M6,LHC 102,F09,B.Tech. CSE Semester III,btech_cse_structure
+CSL3010,Design and Analysis of Algorithms,Computer Science and Engineering,300,programme_core,4,3-1-0,2026-27-I,C,,,LHC 103,F10,B.Tech. CSE Semester V,btech_cse_structure
+CSL3020,Computer Architecture,Computer Science and Engineering,300,programme_core,3,3-0-0,2026-27-I,I,,,LHC 104,F11,B.Tech. CSE Semester V,btech_cse_structure
+CSL3030,Operating Systems,Computer Science and Engineering,300,programme_core,4,3-0-2,2026-27-I,F,,L5,LHC 104,F12,B.Tech. CSE Semester V,btech_cse_structure
+CSL3040,Principles of Programming Languages,Computer Science and Engineering,300,programme_core,3,3-0-0,2026-27-I,K,,,LHC 105,F13,B.Tech. CSE Semester V,btech_cse_structure
+CSL3050,Database Systems,Computer Science and Engineering,300,programme_core,4,3-0-2,2026-27-I,G,,L2,LHC 105,F14,B.Tech. CSE Semester V,btech_cse_structure
+CSP4010,B.Tech. Project,Computer Science and Engineering,400,project,3,0-0-6,2026-27-I,,,,By arrangement,F15,B.Tech. CSE Semester VII,btech_cse_structure
+CSL7010,Randomized Algorithms,Computer Science and Engineering,700,core_bouquet,3,3-0-0,2026-27-I,C,,,LHC 201,F09,B.Tech. CSE Semester VII (CS Core Bouquet 1 - Algorithms); M.Tech. CSE elective,btech_cse_curriculum
+EEL4010,VLSI Design,Electrical Engineering,400,core_bouquet,3,3-0-0,2026-27-I,C,,,LHC 202,F26,B.Tech. CSE Semester VII (CS Core Bouquet 2 - Hardware); B.Tech. EE elective,btech_cse_curriculum
+CSL4110,Deep Learning,Computer Science and Engineering,400,elective,3,3-0-0,2026-27-I,A,,,LHC 203,F16,Programme elective (CSE); open elective (other B.Tech. programmes),btech_cse_curriculum
+CSL4120,Dependable Artificial Intelligence,Computer Science and Engineering,400,elective,3,3-0-0,2026-27-I,I,,,LHC 203,F17,Programme elective (CSE); open elective (other B.Tech. programmes),btech_cse_curriculum
+CSL4130,Computer Vision,Computer Science and Engineering,400,elective,3,3-0-0,2026-27-I,C,,,LHC 204,F18,Programme elective (CSE); open elective (other B.Tech. programmes),btech_cse_curriculum
+CSL4140,Cryptography and Network Security,Computer Science and Engineering,400,elective,3,3-0-0,2026-27-I,F,,,LHC 204,F19,Programme elective (CSE/EE); open elective (other B.Tech. programmes),btech_cse_curriculum
+CSL4150,Advanced Data Structures,Computer Science and Engineering,400,elective,3,3-0-0,2026-27-I,G,,,LHC 205,F10,Programme elective (CSE); open elective (other B.Tech. programmes),btech_cse_curriculum
+CSL4160,Quantum Computing,Computer Science and Engineering,400,elective,3,3-0-0,2026-27-I,K,,,LHC 205,F08,Programme elective (CSE); open elective (other B.Tech. programmes),btech_cse_curriculum
+CSL7110,Information Retrieval,Computer Science and Engineering,700,elective,3,3-0-0,2026-27-I,I,,,LHC 206,F20,Programme elective (B.Tech. CSE); M.Tech. CSE/AI elective,btech_cse_curriculum
+CSL7120,Virtualization and Cloud Computing,Computer Science and Engineering,700,elective,3,3-0-0,2026-27-I,A,,,LHC 208,F21,Programme elective (B.Tech. CSE); M.Tech. CSE elective,btech_cse_curriculum
+CSL7130,Introduction to Blockchain,Computer Science and Engineering,700,elective,3,3-0-0,2026-27-I,A,,,LHC 209,F12,Programme elective (B.Tech. CSE); M.Tech. CSE elective,btech_cse_curriculum
+CSL7140,Compiler Design,Computer Science and Engineering,700,elective,3,3-0-0,2026-27-I,K,,,LHC 207,F22,Programme elective (B.Tech. CSE); M.Tech. CSE elective,btech_cse_curriculum
+CSL7570,Natural Language Understanding,Computer Science and Engineering,700,elective,3,3-0-0,2026-27-I,F,,,LHC 208,F02,Programme elective (B.Tech. CSE); M.Tech. CSE/AI elective,btech_cse_curriculum
+IDL7010,Planning and Decision Making for Robots,Interdisciplinary Research Platform - Robotics and Mobility Systems,700,elective,3,3-0-0,2026-27-I,K,,,LHC 209,F24,Programme elective (B.Tech. CSE AI-ML stream); M.Tech. elective,btech_cse_curriculum
+EEL4020,Embedded Systems,Electrical Engineering,400,elective,3,3-0-0,2026-27-I,K,,,LHC 210,F25,Programme elective (EE/CSE); open elective (other B.Tech. programmes),btech_cse_curriculum
+EEL7010,High-Level Synthesis,Electrical Engineering,700,elective,3,3-0-0,2026-27-I,A,,,LHC 210,F11,Programme elective (EE/CSE); M.Tech. elective,btech_cse_curriculum
+AIL4010,Microeconomics I (AIDE-CMCE),School of Artificial Intelligence and Data Science,400,hss_elective,3,3-0-0,2026-27-I,G,,,LHC 302,F27,Humanities bouquet HSS-III (cross-listed from SAIDE),hss_courses
+HSL2110,Creative Writing,School of Liberal Arts (Humanities and Social Sciences),200,hss_elective,3,3-0-0,2026-27-I,G,,,LHC 303,F28,Humanities bouquet HSS-I Literature (B.Tech. Semester III),hss_courses
+HSL3070,Indian Societies: A Sociological Introduction,School of Liberal Arts (Humanities and Social Sciences),300,hss_elective,3,3-0-0,2026-27-I,A,,,LHC 303,F29,Humanities bouquet HSS-II (B.Tech. Semester V),hss_courses
+HSL3060,Development and Environment,School of Liberal Arts (Humanities and Social Sciences),300,hss_elective,3,3-0-0,2026-27-I,A,,,LHC 304,F30,Humanities bouquet HSS-II (B.Tech. Semester V),hss_courses
+HSL4010,Fundamentals of Logic,School of Liberal Arts (Humanities and Social Sciences),400,hss_elective,3,3-0-0,2026-27-I,F,,,LHC 304,F31,Humanities bouquet HSS-IV (B.Tech. Semester VII Humanities III),hss_courses
+HSL4020,Philosophical Problems,School of Liberal Arts (Humanities and Social Sciences),400,hss_elective,3,3-0-0,2026-27-I,G,,,LHC 305,F32,Humanities bouquet HSS-IV (B.Tech. Semester VII Humanities III),hss_courses
+HSL4030,"Disaster, Risk Reduction and Management",School of Liberal Arts (Humanities and Social Sciences),400,hss_elective,3,3-0-0,2026-27-I,I,,,LHC 304,F33,Humanities bouquet HSS-IV (B.Tech. Semester VII Humanities III),hss_courses
+HSL4070,Health Economics,School of Liberal Arts (Humanities and Social Sciences),400,hss_elective,3,3-0-0,2026-27-I,F,,,LHC 306,F34,Humanities bouquet HSS-III (B.Tech. Semester VII Humanities III),hss_courses
+HSL4110,Urban Sociology,School of Liberal Arts (Humanities and Social Sciences),400,hss_elective,3,3-0-0,2026-27-I,G,,,LHC 306,F35,Humanities bouquet HSS-II (B.Tech. Semester VII Humanities III),hss_courses
+HSL4120,Law and Society,School of Liberal Arts (Humanities and Social Sciences),400,hss_elective,3,3-0-0,2026-27-I,I,,,LHC 307,F36,Humanities bouquet HSS-II (B.Tech. Semester VII Humanities III),hss_courses
+HSL4130,Theories of Justice,School of Liberal Arts (Humanities and Social Sciences),400,hss_elective,3,3-0-0,2026-27-I,K,,,LHC 307,F37,Humanities bouquet HSS-IV (B.Tech. Semester VII Humanities III),hss_courses
+HSL7460,Political and Institutional Economics of Development,School of Liberal Arts (Humanities and Social Sciences),700,hss_elective,3,3-0-0,2026-27-I,G,,,LHC 308,F38,Humanities bouquet HSS-III; M.Sc./Ph.D. elective,hss_courses
+HSL4140,Gandhian Thought,School of Liberal Arts (Humanities and Social Sciences),400,hss_elective,3,3-0-0,2025-26-II,G,,,LHC 305,F31,Humanities bouquet HSS-IV (B.Tech. Semester VI Humanities II),hss_courses
+HSL4150,Critical Thinking,School of Liberal Arts (Humanities and Social Sciences),400,hss_elective,3,3-0-0,2025-26-II,I,,,LHC 306,F32,Humanities bouquet HSS-IV (B.Tech. Semester VI Humanities II),hss_courses
+CSL4170,Computer Graphics,Computer Science and Engineering,400,elective,3,3-0-0,2025-26-II,I,,,LHC 204,F23,Programme elective (CSE); open elective (other B.Tech. programmes),btech_cse_curriculum
+CSL7580,Speech Understanding,Computer Science and Engineering,700,elective,3,3-0-0,2025-26-II,F,,,LHC 208,F20,Programme elective (B.Tech. CSE); M.Tech. CSE/AI elective,btech_cse_curriculum

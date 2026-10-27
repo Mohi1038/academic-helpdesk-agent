@@ -1,0 +1,4 @@
+{"timestamp": "2026-10-26T19:04:38+00:00", "question": "What are the available dining options on the campus?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}
+{"timestamp": "2026-10-26T19:04:40+00:00", "question": "What is the best way to reach the campus from Jodhpur city center?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}
+{"timestamp": "2026-10-26T19:04:41+00:00", "question": "Who is the current Director of IIT Jodhpur?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}
+{"timestamp": "2026-10-26T19:04:43+00:00", "question": "How do I apply for a hostel room change?", "reason": "refusal not logged by the agent", "logged_by": "callback:helpdesk_orchestrator"}
