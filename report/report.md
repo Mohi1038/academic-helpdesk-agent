@@ -4,6 +4,9 @@ A multi-agent academic helpdesk built with Google ADK, Ollama-hosted 8B models a
 It was evaluated on 30 questions × 3 models × {single agent, multi-agent} × 3 runs, plus one ablation,
 for **630 graded answers** in total.
 
+**Team:** Mohit Meemraauth (B23CS1038), Nisarg Upadhyay (B23CS1075), Divyansh Maheshwari (B23CM1015),
+Tejas Kalkar (B23CM1051)
+
 ## 1. System
 
 | Component | Implementation |

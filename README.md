@@ -4,7 +4,14 @@ Multi-agent academic helpdesk for IIT Jodhpur, built with Google ADK, Ollama-hos
 ChromaDB RAG pipeline. It answers questions on programmes, curricula, rules and regulations, and the timetable.
 It also drafts emails to course instructors, and refuses (and logs) questions it cannot answer.
 
-> Work in progress. Phase 1 (data corpus) is complete; Phase 2 (RAG pipeline) is implemented.
+## Team
+
+| Name | Roll number |
+| --- | --- |
+| Mohit Meemraauth | B23CS1038 |
+| Nisarg Upadhyay | B23CS1075 |
+| Divyansh Maheshwari | B23CM1015 |
+| Tejas Kalkar | B23CM1051 |
 
 ## Setup
 
