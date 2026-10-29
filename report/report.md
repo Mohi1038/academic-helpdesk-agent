@@ -1,11 +1,101 @@
-# IIT Jodhpur Academic Helpdesk: Evaluation Report
+# IIT Jodhpur Academic Helpdesk
+
+## Design, implementation and evaluation report
 
 A multi-agent academic helpdesk built with Google ADK, Ollama-hosted 8B models and a ChromaDB RAG pipeline.
 It was evaluated on 30 questions × 3 models × {single agent, multi-agent} × 3 runs, plus one ablation,
 for **630 graded answers** in total.
 
-**Team:** Mohit Meemraauth (B23CS1038), Nisarg Upadhyay (B23CS1075), Divyansh Maheshwari (B23CM1015),
+**Project team:** Mohit Meemraauth (B23CS1038), Nisarg Upadhyay (B23CS1075), Divyansh Maheshwari (B23CM1015),
 Tejas Kalkar (B23CM1051)
+
+## Executive summary
+
+This project builds a bounded academic helpdesk for IIT Jodhpur. It answers policy and timetable questions from institutional sources, looks up structured course and faculty data, drafts (but never sends) instructor emails, and refuses unsupported requests. Its retrieval pipeline combines dense search with BM25; its multi-agent configuration routes requests to policy, schedule and email specialists.
+
+Across 630 graded responses, Qwen3:8b performed best. Single-agent mode reached 80.6% in-scope accuracy with 10.9-second mean latency. Multi-agent mode reached 79.9% accuracy, 94% groundedness and 96.7% routing accuracy, with 30.0-second mean latency. Both configurations correctly refused and logged all out-of-scope questions. The main deployment trade-off is therefore response time versus specialist modularity and stronger citation performance.
+
+The report's visual architecture and evaluation figures are in the [PDF report](report.pdf). The diagrams below summarize the two primary system flows.
+
+```mermaid
+flowchart LR
+  U((Student)) --> UI
+  subgraph APP[Helpdesk application · Streamlit / CLI · Google ADK]
+    UI[Question + source view] --> RUN[Runner · session · event capture]
+    RUN --> MODE{Agent mode}
+    MODE -->|single| ONE[helpdesk_agent<br/>all tools]
+    MODE -->|multi| ORCH[orchestrator<br/>route or refuse]
+    ORCH --> POL[policy_agent]
+    ORCH --> SCH[schedule_agent]
+    ORCH --> MAIL[email_agent]
+    ONE --> TOOLS
+    POL --> TOOLS
+    SCH --> TOOLS
+    MAIL --> TOOLS
+    TOOLS[Typed tool adapters<br/>documents · schedule · email · logging]
+  TOOLS -. results + citations .-> RUN
+  end
+  ONE <--> LLM
+  ORCH <--> LLM
+  POL <--> LLM
+  SCH <--> LLM
+  MAIL <--> LLM
+  subgraph MODEL[Inference service]
+    LLM[LiteLLM → Ollama<br/>chat + embedding models]
+  end
+  TOOLS <--> DATA[(ChromaDB + chunks.jsonl)]
+  TOOLS <--> STRUCT[(Course / timetable / faculty files)]
+  TOOLS <--> OUT[(Draft files + unanswered log)]
+```
+
+```mermaid
+sequenceDiagram
+  actor Student
+  participant UI as Streamlit / CLI
+  participant Run as Helpdesk runner
+  participant ADK as ADK agent / router
+  participant Ollama
+  participant Spec as Domain specialist
+  participant Tool as Tool adapter
+  participant Store as Local data
+  Student->>UI: Ask academic question
+  UI->>Run: ask(question, session_id)
+  Run->>ADK: run_async(user message)
+  ADK->>Ollama: Model request
+  Ollama-->>ADK: Tool intent or answer
+  opt Multi-agent mode
+    ADK->>Spec: transfer_to_agent
+  end
+  Spec->>Tool: Typed tool call
+  Tool->>Store: Read source or write draft/log
+  Store-->>Tool: Result
+  Tool-->>Spec: Facts + source metadata
+  Spec-->>ADK: Final response
+  ADK-->>Run: Agent and tool events
+  Run-->>UI: Turn(answer, drafts, latency)
+  UI-->>Student: Answer + citations / saved draft
+```
+
+```mermaid
+flowchart TB
+  subgraph BUILD[Offline index build]
+    DOCS[24 PDFs + 5 web pages] --> EXTRACT[PyMuPDF + OCR<br/>retain page numbers]
+    EXTRACT --> CHUNK[Section-aware chunks<br/>350 words · 60 overlap]
+    CHUNK --> EMBED[Ollama · nomic-embed-text]
+    EMBED --> VEC[(ChromaDB cosine index)]
+    CHUNK --> META[chunks.jsonl<br/>text + page metadata]
+    META --> BMIDX[(BM25Okapi index)]
+  end
+  Q[search_documents(query)] --> DENSE[Embed query<br/>Chroma top 20]
+  Q --> LEX[Tokenize query<br/>BM25 top 20]
+  VEC -. indexed vectors .-> DENSE
+  BMIDX -. lexical index .-> LEX
+  DENSE --> RRF[RRF · k = 60<br/>rank fusion + top 5]
+  LEX --> RRF
+  RRF --> G{Best dense similarity<br/>< 0.65?}
+  G -->|No| PASS[Evidence passages<br/>source + page citations]
+  G -->|Yes| MISS[No relevant documents<br/>agent refuses + logs]
+```
 
 ## 1. System
 
