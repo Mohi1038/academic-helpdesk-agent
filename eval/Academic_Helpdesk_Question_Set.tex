@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\definecolor{navy}{HTML}{17365D}
+\definecolor{teal}{HTML}{178A91}
+\definecolor{pale}{HTML}{EDF4F8}
+\hypersetup{colorlinks=true,linkcolor=navy,urlcolor=teal}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small IIT Jodhpur Academic Helpdesk}
+\fancyhead[R]{\small Evaluation Question Set}
+\fancyfoot[C]{\small \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\titleformat{\section}{\Large\bfseries\color{navy}}{}{0pt}{}
+\setlist[description]{leftmargin=1.1cm,labelsep=0.35cm,itemsep=0.55em,style=nextline}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+
+\newcommand{\qid}[1]{\textcolor{teal}{\textbf{#1}}}
+\newcommand{\question}[2]{\item[\qid{#1}] #2}
+
+\begin{document}
+\begin{center}
+  {\color{navy}\LARGE\bfseries Academic Helpdesk Agent}\par
+  \vspace{0.18cm}
+  {\color{teal}\Large Evaluation Question Set}\par
+  \vspace{0.25cm}
+  {\small 30 prompts across policy, schedule, email assistance, and out-of-scope refusal}\par
+  \vspace{0.4cm}
+  {\color{navy}\rule{0.92\linewidth}{1pt}}
+\end{center}
+
+\textbf{Purpose.} These prompts evaluate the helpdesk's ability to answer academic questions using retrieved documents and structured tools, draft instructor emails, and refuse unsupported questions without guessing. The same question IDs are used in the project's evaluation data and results.
+
+\section*{A. Academic rules, programmes, and calendar (12)}
+\begin{description}
+\question{P01}{What is the attendance requirement to sit in the Major exam?}
+\question{P02}{How many Open Elective credits do I need to earn in order to get a B.Tech. Degree?}
+\question{P03}{I missed my Major exam because I was ill. How do I apply for a make-up exam?}
+\question{P04}{When are the Major examinations for Semester I of 2026--27?}
+\question{P05}{How long is the Major examination and what is its minimum weightage?}
+\question{P06}{What happens if I am absent from all academic activities for four weeks in a semester?}
+\question{P07}{What is the last date to add or drop courses in Semester I 2026--27?}
+\question{P08}{To whom should a B.Tech. student address an application for leave of absence?}
+\question{P09}{How many total credits are required for a regular B.Tech. degree?}
+\question{P10}{How many credits must a B.Tech. student earn by the end of the second semester to continue in the programme?}
+\question{P11}{When is the Minor examination in Semester I 2026--27?}
+\question{P12}{What is the maximum duration allowed to complete a B.Tech. programme?}
+\end{description}
+
+\section*{B. Courses and timetable (8)}
+\begin{description}
+\question{S01}{What is the slot for the course Autonomous Systems?}
+\question{S02}{How many 400 level electives have been floated by the Humanities department in this semester?}
+\question{S03}{What classes do I have on Friday?}
+\question{S04}{Which room is Computational Game Theory held in?}
+\question{S05}{On which days and at what time does slot F meet?}
+\question{S06}{How many 700-level electives is the Computer Science department offering this semester?}
+\question{S07}{How many credits is Environmental Science and what is its L-T-P structure?}
+\question{S08}{When is CSL7570 scheduled?}
+\end{description}
+
+\section*{C. Instructor contact and email drafting (4)}
+\begin{description}
+\question{E01}{Write an email to the course instructor of CSL7570 that I need leave for 2 days.}
+\question{E02}{Write an email to the instructor of Autonomous Systems asking for permission to take a make-up exam because I missed the Minor exam due to illness.}
+\question{E03}{Who teaches Computational Game Theory and what is their email address?}
+\question{E04}{Draft an email to the Operations Research for Economics instructor saying I will miss Monday's class because I have fever.}
+\end{description}
+
+\section*{D. Out-of-scope questions and refusal (6)}
+\begin{description}
+\question{O01}{What are the available dining options on the campus?}
+\question{O02}{What is the best way to reach the campus from Jodhpur city center?}
+\question{O03}{How do I apply for a hostel room change?}
+\question{O04}{What is the attendance requirement for the hostel mess?}
+\question{O05}{Who is the current Director of IIT Jodhpur?}
+\question{O06}{What was the average placement package for CSE students in 2025?}
+\end{description}
+
+\vfill
+{\small\color{navy}\rule{\linewidth}{0.4pt}}\\[-0.15cm]
+{\small This question set is also provided in machine-readable form as \texttt{eval/questions.jsonl}.}
+\end{document}
